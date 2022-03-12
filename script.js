@@ -1,5 +1,3 @@
-alert('script attached');
-
 window.addEventListener('click', (e) => {
     const users = document.querySelectorAll('[data-requested-participant-id]:not([data-requested-participant-id=""])');
     console.log(users);

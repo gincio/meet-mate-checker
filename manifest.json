@@ -3,9 +3,6 @@
     "description": "Mark some of your teammates on Google Meet call",
     "version": "0.1",
     "manifest_version": 3,
-    "background": {
-        "service_worker": "background.js"
-    },
     "action": {
         "default_icon": {
             "16": "mmm-icon.png",
