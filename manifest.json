@@ -1,0 +1,32 @@
+{
+    "name": "Meet Mate Marker",
+    "description": "Mark some of your teammates on Google Meet call",
+    "version": "0.1",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_icon": {
+            "16": "mmm-icon.png",
+            "32": "mmm-icon.png",
+            "64": "mmm-icon.png",
+            "128": "mmm-icon.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://meet.google.com/*"
+            ],
+            "run_at": "document_start",
+            "all_frames": true,
+            "css": [
+                "styles.css"
+            ],
+            "js": [
+                "script.js"
+            ]
+        }
+    ]
+}

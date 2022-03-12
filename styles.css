@@ -1,0 +1,16 @@
+div[data-checked="true"]::before {
+    position: absolute;
+    content: "\2713";
+    display: block;
+    width: 22px;
+    height: 22px;
+    background-color: rgba(32,33,36,0.302);
+    color: #5aff77;
+    left: 8px;
+    top: 8px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 20px;
+}
