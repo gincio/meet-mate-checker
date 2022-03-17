@@ -13,4 +13,5 @@ div[data-checked="true"]::before {
     font-weight: bold;
     text-align: center;
     line-height: 20px;
+    z-index: 1;
 }
