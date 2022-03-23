@@ -1,13 +1,22 @@
+const CLICKABLE_AREA_WIDTH = 30;
+const CLICKABLE_AREA_HEIGHT = 30;
+const CLICKED_POSITION_OFFSET = 16;
+const USER_ELEMENTS_QUERY = '[data-requested-participant-id]';
+
 window.addEventListener('click', (e) => {
-    const users = document.querySelectorAll('[data-requested-participant-id]:not([data-requested-participant-id=""])');
-    console.log(users);
+    const users = document.querySelectorAll(USER_ELEMENTS_QUERY);
     const rects = [];
-    users.forEach(el => rects.push({ x: el.offsetLeft, y: el.offsetTop, width: el.offsetWidth, height: el.offsetHeight }))
-    const clickedPosition = { x: e.clientX, y: e.clientY };
+    users.forEach(el => rects.push({
+        x: el.offsetLeft,
+        y: el.offsetTop,
+        width: CLICKABLE_AREA_WIDTH,
+        height: CLICKABLE_AREA_HEIGHT
+    }))
+    const clickedPosition = { x: e.clientX - CLICKED_POSITION_OFFSET, y: e.clientY - CLICKED_POSITION_OFFSET };
     const foundInRects = rects.map(rect => isInRectangle(clickedPosition, rect));
-    console.log(foundInRects);
     foundInRects.forEach((found, index) => {
         if (!found) return;
+        e.preventDefault();
         const el = users[index];
         const alreadyChecked = el.dataset.checked == 'true';
         alreadyChecked ? setUnchecked(el) : setChecked(el);
