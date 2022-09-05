@@ -1,7 +1,7 @@
 {
     "name": "Meet Mate Marker",
     "description": "Highlight your teammates in the Google Meet call by ticking them off with a checkmark.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "manifest_version": 3,
     "action": {
         "default_icon": {
